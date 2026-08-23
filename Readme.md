@@ -36,5 +36,6 @@ This repository contains my practical QA work, including:
 Seeking an opportunity as a **Manual QA Tester / QA Intern** where I can apply my testing knowledge, improve software quality, and grow as a QA professional.
 
 ## 📫 Contact : +971 554188353
+## Mail : Sahil.khhaan.qa@gmail.com
 
-**GitHub:** SahilKhanQA
+**GitHub:** Khansahil31
