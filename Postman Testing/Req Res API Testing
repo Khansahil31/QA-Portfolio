@@ -1,0 +1,77 @@
+package demoproject;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import java.io.File;
+
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+import java.util.HashMap;
+
+import org.testng.annotations.Test;
+public class Basics {
+	int id;
+	@Test(priority=1)
+	public void test1() {
+		given()
+		.header("x-api-key", "reqres_a18e35ebbb3e427fa07bb4599ef734c6")
+		
+		.when().get("https://reqres.in/api/users?page=2")
+		
+		.then().log().all().assertThat()
+		.statusCode(200)
+		.body("page",equalTo (2));
+	}
+	@Test(priority=2)
+	public void createUsers() {
+
+		
+		
+		
+		given()
+		.header("x-api-key","reqres_a18e35ebbb3e427fa07bb4599ef734c6")
+		.contentType("application/json")
+		.body(new File("src/demoproject/createUsers.json"))
+		
+		.when()
+		.post("https://reqres.in/api/register")
+		
+		
+		.then().assertThat()
+		.statusCode(200).log().all();
+	}
+	@Test (priority=3)
+	public void updateUsers() {
+		given()
+		.header("x-api-key","reqres_a18e35ebbb3e427fa07bb4599ef734c6")
+		.contentType("application/json")
+		.body(new File("src/demoproject/updateUsers.json"))
+		
+		.when()
+		.put("https://reqres.in/api/users/2")
+		
+		
+		.then().assertThat()
+		.statusCode(200).log().all();
+		
+		
+		
+	}
+	@Test (priority=4)
+	public void deleteUsers() {
+		given()
+		.header("x-api-key","reqres_a18e35ebbb3e427fa07bb4599ef734c6")
+		.contentType("application/json")
+		
+		.when()
+		.delete("https://reqres.in/api/users/2")
+		
+		
+		.then().assertThat()
+		.statusCode(204).log().all();
+		
+		
+		
+	}
+
+}
