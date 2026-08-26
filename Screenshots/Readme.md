@@ -17,12 +17,24 @@ The screenshots may include:
 * Validation and error-handling issues
 * Relevant Jira bug screenshots
 
+
 ## Testing Project
 
 **Application:** DemoBlaze
 **Testing Type:** Manual Testing
 **Environment:** Web Browser
 **Defect Tracking:** Jira
+
+
+## Evidence Naming Convention
+
+Screenshots are named using a consistent format where possible:
+
+BUG-ID_DEFECT_ID.png
+
+Example:
+
+BUG-001_TS_LOGIN_001.png
 
 
 ## 🔗 Related Artifacts
